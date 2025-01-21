@@ -1,0 +1,583 @@
+/* Hero Section con Video */
+.hero-section {
+    position: relative;
+    height: auto;
+    min-height: 500px;
+    overflow: hidden;
+    margin-top: 0;
+    
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+#heroVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+/* Estilos de Sección */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #002c3a;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(to right, #303f44, transparent);
+}
+
+/* Filtros de Galería */
+.gallery-filters {
+    background:  rgba(0, 24, 29, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: rgb(21, 60, 63);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #334f5a;
+    transform: translateY(-2px);
+}
+
+.filter-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Grid de Imágenes */
+.gallery-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background:  rgba(0, 24, 29, 0.95);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Sección de Videos */
+.video-card {
+    background: rgba(68, 79, 82, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    height: 100%;
+    
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.video-info p {
+    margin: 0;
+    color: #ffffff;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #8ed3e7;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-overlay {
+    opacity: 1;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Sección de Audio */
+.audio-card {
+    background: rgba(59, 73, 77, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 1rem;
+    color:white
+}
+
+.audio-thumbnail {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.audio-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.audio-player {
+    text-align: center;
+}
+
+.audio-player audio {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+/* Modal */
+.modal-content {
+    background: rgba(1, 31, 37, 0.95);
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-item {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+        min-height: 300px;
+    }
+
+    .filter-buttons {
+        gap: 0.5rem;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .gallery-card img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        height: 250px;
+        min-height: 250px;
+    }
+}
+
+/* Ajustar el navbar dentro del hero */
+.navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    background: transparent;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+    top: 0;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 44, 58, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+}
+
+/* Ajustar el contenedor principal */
+main.container {
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem;
+}
+
+/* Estilos para la sección de momentos memorables */
+.moments-section {
+    background: rgba(0, 44, 58, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.nav-tabs {
+    border-bottom: 2px solid rgba(142, 211, 231, 0.2);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.nav-tabs .nav-link {
+    color: #8ed3e7;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-tabs .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(142, 211, 231, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover::before {
+    transform: translateX(0);
+}
+
+.nav-tabs .nav-link.active {
+    background: #8ed3e7;
+    color: #002c3a;
+    font-weight: 600;
+}
+
+.moment-card {
+    background: rgba(0, 44, 58, 0.9);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.moment-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.moment-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.moment-image {
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.moment-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.moment-info {
+    padding: 1.5rem;
+    color: white;
+}
+
+.moment-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.moment-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Animaciones */
+.tab-pane {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Asegurar que los títulos dentro de las cards mantengan su color blanco */
+.moment-card h3,
+.video-card h3,
+.audio-card h3 {
+    color: #ffffff;
+}
+
+/* Mejorar las cards de video */
+.video-card {
+    background: rgba(0, 44, 58, 0.95);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.video-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-info {
+    padding: 1.5rem;
+    color: #8ed3e7;
+}
+
+/* Mejorar la sección de audio */
+.audio-section {
+    background: rgba(0, 44, 58, 0.95);
+    border-radius: 15px;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards 0.3s;
+    
+}
+
+.audio-card {
+    background: rgba(142, 211, 231, 0.1);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.audio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(142, 211, 231, 0.15);
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto de carga progresiva */
+.moment-card:nth-child(1) { animation-delay: 0.2s; }
+.moment-card:nth-child(2) { animation-delay: 0.4s; }
+.moment-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Actualizar los estilos del título en la sección de audio */
+.audio-section .section-title {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.audio-section .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(to right, #8ed3e7, transparent);
+}
+
+/* Estilos para el botón de audio del hero */
+.hero-overlay .audio-control {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.hero-overlay .theme-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(0, 44, 58, 0.95);
+    border: 2px solid #8ed3e7;
+    color: #8ed3e7;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-overlay .theme-button .button-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.hero-overlay .theme-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 44, 58, 1);
+}
+
+.hero-overlay .theme-button.playing {
+    background: #8ed3e7;
+    color: rgba(0, 44, 58, 0.95);
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .hero-overlay .audio-control {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .hero-overlay .theme-button {
+        padding: 8px 15px;
+    }
+
+    .hero-overlay .theme-button .button-text {
+        font-size: 0.8rem;
+    }
+}

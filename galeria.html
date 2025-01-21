@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Office - Galería</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logoX-icon.png">
+    <style>
+        /* Estilos para el reproductor personalizado */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-wrapper:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            background: rgba(142, 211, 231, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            background: #8ed3e7;
+        }
+
+        .video-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #8ed3e7;
+            width: 0;
+            transition: width 0.1s linear;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section con Video -->
+    <div class="hero-section">
+        <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                    <img src="assets/images/the-office-tv-show-sign-seeklogo.svg" alt="The Office Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fas fa-bars text-white"></i>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link active" href="galeria.html">
+                            <i class="fas fa-images"></i> Galería
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="personajes.html">
+                            <i class="fas fa-users"></i> Personajes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recomendaciones.html">
+                            <i class="fas fa-star"></i> Recomendaciones
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <div class="hero-video">
+            <video autoplay muted loop id="heroVideo" playsinline>
+                <source src="assets/videos/Best Intro Ever - The Office US.mp4" type="video/mp4">
+                <source src="assets/videos/Best Intro Ever - The Office US.mp4" type="video/webm">
+                Tu navegador no soporta el elemento de video.
+            </video>
+            <div class="hero-overlay">
+                <div class="container">
+                    <h1 class="display-4 text-white">Galería Multimedia</h1>
+                    <p class="lead text-white">Explora los mejores momentos de The Office</p>
+                </div>
+                <div class="audio-control">
+                    <button id="heroAudioButton" class="theme-button" title="Activar audio del intro">
+                        <i class="fas fa-volume-mute"></i>
+                        <span class="button-text">Activar audio del intro</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+       
+
+        <!-- Momentos Memorables -->
+        <section class="moments-section">
+            <div class="moments-content">
+                <ul class="nav nav-tabs" id="momentsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#momentos">
+                            <i class="fas fa-heart"></i> Momentos Icónicos
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bromas">
+                            <i class="fas fa-laugh-squint"></i> Bromas
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#eventos">
+                            <i class="fas fa-calendar"></i> Eventos Especiales
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#detras">
+                            <i class="fas fa-film"></i> Galería de imágenes
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Contenido de las pestañas -->
+                <div class="tab-content" id="momentsContent">
+                    <!-- Momentos Icónicos -->
+                    <div class="tab-pane fade show active" id="momentos">
+                        <div class="row g-4">
+                            <!-- Prison Mike -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="tenor-gif-embed" data-postid="15661490" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/the-worst-thing-about-prison-was-the-dementors-dementors-prison-azkaban-harry-potter-gif-15661490">The Worst Thing About Prison Was The Dementors Azkaban GIF</a>from <a href="https://tenor.com/search/the+worst+thing+about+prison+was+the+dementors-gifs">The Worst Thing About Prison Was The Dementors GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                                    <div class="moment-info">
+                                        <h3>Prison Mike</h3>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Parkour-->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                   
+                                        <div class="tenor-gif-embed" data-postid="9984287" data-share-method="host" data-aspect-ratio="1.78571" data-width="100%"><a href="https://tenor.com/view/michael-scott-the-office-parkour-funny-gif-9984287">Michael Scott GIF</a>from <a href="https://tenor.com/search/michael-gifs">Michael GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    
+                                    <div class="moment-info">
+                                        <h3>Parkour</h3>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                           
+                        
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="tenor-gif-embed" data-postid="22869342" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/dwight-nod-the-office-burn-gif-22869342">Dwight Nod GIF</a>from <a href="https://tenor.com/search/dwight-gifs">Dwight GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                                    <div class="moment-info">
+                                        <h3>Simulacro de Incendio</h3>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bromas -->
+                    <div class="tab-pane fade" id="bromas">
+                        <div class="row g-4">
+                            <!-- Dwight en una caja -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div style="width:100%;height:0;padding-bottom:83%;position:relative;">
+                                        <iframe src="https://giphy.com/embed/GA1s4aZhfe5f2N3fFb" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Dwight en una caja</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Jim's Best Pranks -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div style="width:100%;height:0;padding-bottom:84%;position:relative;">
+                                        <iframe src="https://giphy.com/embed/MPM1reHx9plTClKlW7" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Las Mejores Bromas de Jim</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fire Drill Scene -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div style="width:100%;height:0;padding-bottom:83%;position:relative;">
+                                        <iframe src="https://giphy.com/embed/o92jeZ9Uw5X3l6RIFF" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                                    
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Jim imitando a Dwight</h3>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+
+              
+
+                    <!-- Eventos Especiales -->
+                    <div class="tab-pane fade" id="eventos">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div style="width:100%;height:0;padding-bottom:84%;position:relative;"><iframe src="https://giphy.com/embed/hjvinhl1pUrb1gdzlV" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/theoffice-nbc-the-office-tv-hjvinhl1pUrb1gdzlV"></a></p>
+                                    <div class="moment-info">
+                                        <h3>Los Dundies</h3>
+                              
+                                    </div>
+                                </div>
+                            </div>
+
+                       
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div style="width:100%;height:0;padding-bottom:83%;position:relative;"><iframe src="https://giphy.com/embed/SZQBPO4NqHkh6wmdXk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/theoffice-the-office-tv-casual-friday-SZQBPO4NqHkh6wmdXk"></a></p>
+                                    <div class="moment-info">
+                                        <h3>El Chile de Kevin</h3>
+                                
+                                    </div>
+                                </div>
+                            </div>
+
+                      
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div style="width:100%;height:0;padding-bottom:83%;position:relative;"><iframe src="https://giphy.com/embed/FcCLjCQ3xY7ICVtfbB" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/theoffice-the-office-tv-stress-relief-part-1-FcCLjCQ3xY7ICVtfbB"></a></p>
+                                    <div class="moment-info">
+                                    <h3>Dwight Face</h3>
+                                      
+                                    </div>
+                                </div>
+                            </div>
+
+
+                 
+
+
+                            
+                        </div>
+                    </div>
+
+                    <!-- Detrás de Cámaras -->
+                    <div class="tab-pane fade" id="detras">
+        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="moment-image">
+                                        <img src="assets/images/galeria/michael.jpg" alt="Michael Scott">
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Michael Scott</h3>
+                                        <p>El mejor jefe del mundo</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="moment-image">
+                                        <img src="assets/images/galeria/jim-pam.jpg" alt="Jim y Pam">
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Jim y Pam</h3>
+                                        <p>La pareja favorita</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="moment-image">
+                                        <img src="assets/images/galeria/dwight.jpg" alt="Dwight">
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Dwight Schrute</h3>
+                                        <p>Asistente del Gerente Regional</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="moment-image">
+                                        <img src="assets/images/galeria/office-party.jpg" alt="Fiesta de Oficina">
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Fiesta de Navidad</h3>
+                                        <p>Celebraciones en Dunder Mifflin</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="moment-image">
+                                        <img src="assets/images/galeria/conference-room.jpg" alt="Sala de Conferencias">
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>Reuniones Memorables</h3>
+                                        <p>Momentos en la sala de conferencias</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="moment-card">
+                                    <div class="moment-image">
+                                        <img src="assets/images/galeria/cast.jpg" alt="Elenco Completo">
+                                    </div>
+                                    <div class="moment-info">
+                                        <h3>El Elenco Completo</h3>
+                                        <p>La familia de Dunder Mifflin</p>
+                                    </div>
+                                </div>
+                            </div></div>
+                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Videos -->
+        <section class="video-section mt-5">
+            <h2 class="section-title">Mejores Momentos en Video</h2>
+            <div class="row g-4">
+                <!--Asian Jim-->
+        
+                <div class="col-lg-6">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video width="100%" height="auto" poster="assets/images/poster/AsianJimPoster.jpg" controls>
+                                <source src="assets/videos/Asian Jim - The Office.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>Jim Asiático</h3>
+                            <p>La broma de Jim a Dwight</p>
+                        </div>
+                    </div>
+                </div>
+
+       
+
+                <!-- Michael's Spanish Lessons -->
+                <div class="col-lg-6">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video width="100%" height="auto" poster="assets/images/poster/MichaelSpanishPoster.jpg" controls>
+                                <source src="assets/videos/Michael esta aprendiendo español - The Office Subtitulado.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>Michael Aprende Español</h3>
+                            <p>Clases de español con Michael Scott</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Michael's Pyramid Scheme -->
+                <div class="col-lg-6">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video width="100%" height="auto"  poster="assets/images/poster/PiramidePoster.jpg" controls>
+                                <source src="assets/videos/Michael's Pyramid Scheme  - The Office US.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>Esquema Piramidal</h3>
+                            <p>Michael intenta vender un esquema piramidal</p>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- No, Dios, No! -->
+                    <div class="col-lg-6">
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <video width="100%" height="auto" poster="assets/images/poster/NoGodPoster.jpg" controls>
+                                <source src="assets/videos/No God, Please No! Noooooooo!  - The Office (Sub Español Latino).mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                        <div class="video-info">
+                            <h3>No, Dios, No!</h3>
+                            <p>La reacción de Michael Scott</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Audio -->
+        <section class="audio-section mt-5">
+            <h2 class="section-title">Frases Memorables</h2>
+            <div class="row g-4">
+                <!-- Michael Scott -->
+                <div class="col-md-4">
+                    <div class="audio-card">
+                      
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="assets/audio/esoDijoElla.mp3" type="audio/mpeg">
+                            </audio>
+                            <p>"Eso dijo ella" - Michael Scott</p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-4">
+                    <div class="audio-card">
+                       
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="assets/audio/mi filosofia.mp3" type="audio/mpeg">
+                            </audio>
+                            <p>"Mi filosofia" - Michael Scott</p>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-md-4">
+                    <div class="audio-card">
+                        
+                        <div class="audio-player">
+                            <audio controls>
+                                <source src="assets/audio/nadie deberia.mp3" type="audio/mpeg">
+                            </audio>
+                            <p>"Nadie debería ir a trabajar..." - Michael Scott</p>
+                    </div>
+                </div>
+            </div>
+
+
+        
+        </section>
+
+        <!-- Modal para imágenes -->
+        <div class="modal fade" id="imageModal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" class="img-fluid" id="modalImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row footer-sections">
+                    <div class="col-lg-6 footer-section">
+                    <h5>Licencias y Atribuciones</h5>
+                        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">Fan site The Office </span> by <span property="cc:attributionName">Antonio Ibáñez</span> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+                        <div class="footer-logo">
+                            <img src="assets/images/the-office-tv-show-sign-seeklogo.png" 
+                                 alt="The Office Logo" 
+                                 class="footer-brand-logo" style="width: 150px; height: auto;">
+                        </div>
+                </div>
+                    <div class="col-lg-6 footer-section">
+                    <h5>Recursos Utilizados</h5>
+                    <ul class="list-unstyled">
+                        <li>Imágenes: <a href="https://www.gettyimages.es/fotos/the-office-programa-de-televisi%C3%B3n" class="text-light">gettyimages</a> (Licencia libre)</li>
+                        <li>Iconos: <a href="https://fontawesome.com" class="text-light">Font Awesome</a> (Licencia libre)</li>
+                        <li>Audio: <a href="https://freesound.org" class="text-light">Freesound</a> (CC0)</li>
+                        <li>Video: <a href="https://www.pexels.com" class="text-light">Pexels</a> (Licencia libre)</li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>Las imágenes y contenidos relacionados con The Office son utilizados con fines educativos bajo Fair Use.
+                    The Office™ es una marca registrada de NBCUniversal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/galeria.js"></script>
+</body>
+</html>

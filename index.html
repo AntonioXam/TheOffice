@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Office - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/images/logoX-icon.png">
+</head>
+
+<body>
+    <!-- Navbar mejorado -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/the-office-tv-show-sign-seeklogo.svg" alt="The Office Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">
+                            <i class="fas fa-images"></i> Galería
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="personajes.html">
+                            <i class="fas fa-users"></i> Personajes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recomendaciones.html">
+                            <i class="fas fa-star"></i> Recomendaciones
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Mejorada -->
+    <div class="hero-section" style="background: url('assets/images/portada.jpg') no-repeat center center; background-size: cover;">
+        <div class="hero-overlay">
+            <div class="container py-5">
+                <h1 class="display-4 text-white bounce-in">Bienvenidos a The Office</h1>
+                <p class="lead text-white rotate-in">Una comedia mockumentary sobre la vida cotidiana en la oficina de Dunder Mifflin</p>
+            </div>
+            <!-- Este es el botón que mantenemos -->
+            <div class="audio-control">
+                <button id="themeButton" class="theme-button" title="Iniciar tema musical">
+                    <i class="fas fa-play"></i>
+                    <span class="button-text">Iniciar tema musical</span>
+                    <audio id="themeAudio" src="assets/audio/Theme-office.mp3"></audio>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Ajustar las secciones principales para que tengan fondo semi-transparente -->
+        <section class="synopsis-stats-section py-5 animate-fade-up">
+            <div class="container">
+                <!-- Sinopsis primero, ocupando todo el ancho -->
+                <div class="synopsis-card mb-5 animate-fade-up">
+                    <div class="row">
+                        <div class="col-md-4 mb-4 mb-md-0">
+                            <div class="synopsis-img-container">
+                                <img src="assets/images/elenco.jpg" 
+                                     alt="Elenco de The Office" 
+                                     class="img-fluid rounded shadow">
+                                <a href="https://es.wikipedia.org/wiki/The_Office_(Estados_Unidos)" 
+                                   class="synopsis-link-overlay" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h2 class="section-title">Sinopsis</h2>
+                            <p class="synopsis-text">
+                                The Office es una serie de televisión estadounidense que sigue el día a día de los empleados de la empresa papelera Dunder Mifflin en Scranton, Pennsylvania.
+                                <span class="synopsis-text-extended">
+                                    A través de un formato de falso documental, la serie retrata las divertidas y a menudo incómodas situaciones laborales lideradas por Michael Scott, el excéntrico gerente regional. La serie destaca por su humor único, sus personajes memorables y su capacidad para mezclar momentos hilarantes con toques emotivos.
+                                    
+                                </span>
+                            </p>
+                            <div class="highlights-container">
+                                <div class="highlight-pill">
+                                    <i class="fas fa-laugh-beam"></i>
+                                    <span>Comedia Mockumentary</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="fas fa-building"></i>
+                                    <span>Ambientada en una oficina</span>
+                                </div>
+                                <div class="highlight-pill">
+                                    <i class="fas fa-users"></i>
+                                    <span>Elenco Memorable</span>
+                                </div>
+                                <div class="highlight-pill highlight-extra">
+                                    <i class="fas fa-award"></i>
+                                    <span>Múltiples Premios</span>
+                                </div>
+                                <div class="highlight-pill highlight-extra">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Fenómeno Global</span>
+                                </div>
+                                <div class="highlight-pill highlight-extra">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Historias Emotivas</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estadísticas debajo, en una fila de 4 columnas -->
+                <div class="row stats-row">
+                    <!-- Premios Emmy -->
+                    <div class="col-6 col-md-3 mb-4 animate-fade-up" data-delay="100">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <img src="assets/images/emmy-icon.png" alt="Emmy Award" class="award-icon" style="width: 50px; height: auto;">
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-number">5</h3>
+                                <p class="stat-label">Premios Emmy</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Temporadas -->
+                    <div class="col-6 col-md-3 mb-4 animate-fade-up" data-delay="200">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-number">9</h3>
+                                <p class="stat-label">Temporadas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Episodios -->
+                    <div class="col-6 col-md-3 mb-4 animate-fade-up" data-delay="300">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-number">201</h3>
+                                <p class="stat-label">Episodios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating IMDB -->
+                    <div class="col-6 col-md-3 mb-4 animate-fade-up" data-delay="400">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 class="stat-number">8.9/10</h3>
+                                <p class="stat-label">Rating IMDB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Temporadas Mejorada -->
+        <section class="seasons mt-5">
+            <div class="text-center animate-fade-up">
+                <h2 class="seasons-title">Temporadas</h2>
+            </div>
+            <div class="row g-4 seasons-wrapper">
+                <!-- Temporada 1 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="100">
+                    <a href="https://www.primevideo.com/-/es/detail/0H7JFOPK2QO9WVZ8D9D0J5ZRQN/ref=atv_dp_season_select_s1" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T1.jpg" class="card-img-top season-image" alt="Temporada 1" >
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 1</h5>
+                                <p class="card-text"><strong>6 episodios - 2005</strong></p>
+                                <p class="card-text">La primera temporada introduce a los personajes principales y establece el tono de la serie.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 2 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="200">
+                    <a href="https://www.primevideo.com/-/es/detail/0R1C09YLMK0WBKUMV3RQSOHYWY/ref=atv_dp_season_select_s2" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T2.jpg" class="card-img-top season-image" alt="Temporada 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 2</h5>
+                                <p class="card-text"><strong>22 episodios - 2005-2006</strong></p>
+                                <p class="card-text">La segunda temporada explora en mayor profundidad las relaciones entre los personajes y presenta nuevas dinámicas en la oficina.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 3 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="300">
+                    <a href="https://www.primevideo.com/-/es/detail/0IQYBG19L3RUTFGEFLTEVIACSX/ref=atv_dp_season_select_s3" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T3.jpg" class="card-img-top season-image" alt="Temporada 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 3</h5>
+                                <p class="card-text"><strong>25 episodios - 2006-2007</strong></p>
+                                <p class="card-text">En la tercera temporada, Jim regresa de Stamford y nuevas relaciones y conflictos emergen en la oficina.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 4 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="400">
+                    <a href="https://www.primevideo.com/-/es/detail/0FO4JS60FUKQPO97BSF67NTI8E/ref=atv_dp_season_select_s4" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T4.jpg" class="card-img-top season-image" alt="Temporada 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 4</h5>
+                                <p class="card-text"><strong>19 episodios - 2007-2008</strong></p>
+                                <p class="card-text">La cuarta temporada trae cambios significativos en las relaciones personales de los personajes.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 5 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="500">
+                    <a href="https://www.primevideo.com/-/es/detail/0IMOV8SHN2LIJE1SDHCIVVAYYS/ref=atv_dp_season_select_s5" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T5.jpg" class="card-img-top season-image" alt="Temporada 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 5</h5>
+                                <p class="card-text"><strong>28 episodios - 2008-2009</strong></p>
+                                <p class="card-text">La quinta temporada profundiza en las relaciones entre los personajes y trae nuevos desafíos.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 6 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="600">
+                    <a href="https://www.primevideo.com/-/es/detail/0FX4CROU0U3WKNGCR6S0M11EOP/ref=atv_dp_season_select_s6" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T6.jpg" class="card-img-top season-image" alt="Temporada 6">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 6</h5>
+                                <p class="card-text"><strong>26 episodios - 2009-2010</strong></p>
+                                <p class="card-text">La sexta temporada trae cambios importantes en la dinámica de la oficina.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 7 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="700">
+                    <a href="https://www.primevideo.com/-/es/detail/0KN5K8A68PU4J2ZT50V6RZ2ABN/ref=atv_dp_season_select_s7" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T7.jpg" class="card-img-top season-image" alt="Temporada 7">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 7</h5>
+                                <p class="card-text"><strong>26 episodios - 2010-2011</strong></p>
+                                <p class="card-text">La séptima temporada marca el final de una era con la partida de Michael Scott.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 8 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="800">
+                    <a href="https://www.primevideo.com/-/es/detail/0MATWCUDBSHDXIZYGNVQ4V1VWP/ref=atv_dp_season_select_s8" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T8.jpg" class="card-img-top season-image" alt="Temporada 8">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 8</h5>
+                                <p class="card-text"><strong>24 episodios - 2011-2012</strong></p>
+                                <p class="card-text">Andy Bernard asume el rol de gerente regional mientras nuevos personajes y conflictos surgen.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Temporada 9 -->
+                <div class="col-lg-4 col-md-6 animate-fade-up" data-delay="900">
+                    <a href="https://www.primevideo.com/-/es/detail/0Q38DX2K1Y5F1VNEHM346VNIFI/ref=atv_dp_season_select_s9" class="card-link" target="_blank" rel="noopener noreferrer">
+                        <div class="card animate-on-scroll">
+                            <img src="assets/images/T9.jpg" class="card-img-top season-image" alt="Temporada 9">
+                            <div class="card-body">
+                                <h5 class="card-title">Temporada 9</h5>
+                                <p class="card-text"><strong>25 episodios - 2012-2013</strong></p>
+                                <p class="card-text">La temporada final concluye las historias de los personajes con finales emotivos y satisfactorios.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row footer-sections">
+                    <div class="col-lg-6 footer-section">
+                        <h5>Licencias y Atribuciones</h5>
+                        <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">Fan site The Office </span> by <span property="cc:attributionName">Antonio Ibáñez</span> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
+                        <div class="footer-logo">
+                            <img src="assets/images/the-office-tv-show-sign-seeklogo.png" 
+                                 alt="The Office Logo" 
+                                 class="footer-brand-logo" style="width: 150px; height: auto;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 footer-section">
+                        <h5>Recursos Utilizados</h5>
+                        <ul class="list-unstyled">
+                            <li>Imágenes: <a href="https://www.gettyimages.es/fotos/the-office-programa-de-televisi%C3%B3n" class="text-light">gettyimages</a> (Licencia libre)</li>
+                            <li>Iconos: <a href="https://fontawesome.com" class="text-light">Font Awesome</a> (Licencia libre)</li>
+                            <li>Audio: <a href="https://freesound.org" class="text-light">Freesound</a> (CC0)</li>
+                            <li>Video: <a href="https://www.pexels.com" class="text-light">Pexels</a> (Licencia libre)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>Las imágenes y contenidos relacionados con The Office son utilizados con fines educativos bajo Fair Use.
+                    The Office™ es una marca registrada de NBCUniversal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/funciones.js"></script>
+</body>
+</html>
