@@ -21,7 +21,7 @@
                          alt="Logotipo de The Office" 
                          title="Logo de The Office">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Menú de navegación">
                     <i class="fas fa-bars text-white"></i>
             </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,17 +32,17 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link active" href="galeria.html">
+                            <a class="nav-link active" href="galeria.html" title="Ver galería multimedia">
                             <i class="fas fa-images"></i> Galería
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="personajes.html">
+                        <a class="nav-link" href="personajes.html" title="Ver personajes principales">
                             <i class="fas fa-users"></i> Personajes
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="recomendaciones.html">
+                        <a class="nav-link" href="recomendaciones.html" title="Ver series recomendadas">
                             <i class="fas fa-star"></i> Recomendaciones
                         </a>
                     </li>
@@ -63,8 +63,11 @@
                     <p class="lead text-white">Explora los mejores momentos de The Office</p>
                 </div>
                 <div class="audio-control">
-                    <button id="heroAudioButton" class="theme-button" title="Activar audio del intro">
-                        <i class="fas fa-volume-mute"></i>
+                    <button id="heroAudioButton" 
+                            class="theme-button" 
+                            aria-label="Controlar audio del intro"
+                            title="Activar/Desactivar audio del intro">
+                        <i class="fas fa-volume-mute" aria-hidden="true"></i>
                         <span class="button-text">Activar audio del intro</span>
                     </button>
                 </div>
@@ -81,22 +84,24 @@
             <div class="moments-content">
                 <ul class="nav nav-tabs" id="momentsTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#momentos">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#momentos" title="Ver momentos icónicos">
                             <i class="fas fa-heart"></i> Momentos Icónicos
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bromas">
-                            <i class="fas fa-laugh-squint"></i> Bromas
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bromas" aria-label="Ver sección de bromas" title="Ver bromas memorables">
+                            <i class="fas fa-laugh-squint" aria-hidden="true"></i> 
+                            <span>Bromas</span>
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#eventos">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#eventos" aria-label="Ver sección de eventos especiales" title="Ver eventos memorables"
+                        >
                             <i class="fas fa-calendar"></i> Eventos Especiales
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#detras">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#detras" aria-label="Ver sección de galería de imágenes" title="Ver galería de imágenes">
                             <i class="fas fa-film"></i> Galería de imágenes
                         </button>
                     </li>
@@ -108,12 +113,13 @@
                     <div class="tab-pane fade show active" id="momentos">
                         <div class="row g-4">
                             <!-- Prison Mike -->
-                            <div class="col-md-6 col-lg-4">
+                            <div class="col-md-6 col-lg-4" title="Prison Mike y los Dementores">
                                 <div class="moment-card">
-                                    <div class="tenor-gif-embed" data-postid="15661490" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/the-worst-thing-about-prison-was-the-dementors-dementors-prison-azkaban-harry-potter-gif-15661490">The Worst Thing About Prison Was The Dementors Azkaban GIF</a>from <a href="https://tenor.com/search/the+worst+thing+about+prison+was+the+dementors-gifs">The Worst Thing About Prison Was The Dementors GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-                                    <div class="moment-info">
-                                        <h3>Prison Mike</h3>
-                                        
+                                    <div class="tenor-gif-embed"  data-postid="15661490" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%" title="Prison Mike explicando sobre los dementores" aria-label="Prison Mike GIF de The Office">
+                                        <a href="https://tenor.com/view/the-worst-thing-about-prison-was-the-dementors-dementors-prison-azkaban-harry-potter-gif-15661490">The Worst Thing About Prison Was The Dementors Azkaban GIF</a>from <a href="https://tenor.com/search/the+worst+thing+about+prison+was+the+dementors-gifs">The Worst Thing About Prison Was The Dementors GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+                                    <div class="moment-info" >
+                                        <h3>Prison Mike y los Dementores</h3>
+                                        <p>Michael cuenta su experiencia en la cárcel</p>
                                     </div>
                                 </div>
                             </div>
@@ -124,9 +130,9 @@
                                    
                                         <div class="tenor-gif-embed" data-postid="9984287" data-share-method="host" data-aspect-ratio="1.78571" data-width="100%"><a href="https://tenor.com/view/michael-scott-the-office-parkour-funny-gif-9984287">Michael Scott GIF</a>from <a href="https://tenor.com/search/michael-gifs">Michael GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     
-                                    <div class="moment-info">
-                                        <h3>Parkour</h3>
-                                        
+                                    <div class="moment-info" title="Parkour en la Oficina">
+                                        <h3>Parkour en la Oficina</h3>
+                                        <p>Michael, Dwight y Andy intentan hacer parkour</p>
                                     </div>
                                 </div>
                             </div>
@@ -134,10 +140,11 @@
                            
                         
                             <div class="col-md-6 col-lg-4">
-                                <div class="moment-card">
+                                <div class="moment-card" title="Simulacro de incendio">
                                     <div class="tenor-gif-embed" data-postid="22869342" data-share-method="host" data-aspect-ratio="1.77778" data-width="100%"><a href="https://tenor.com/view/dwight-nod-the-office-burn-gif-22869342">Dwight Nod GIF</a>from <a href="https://tenor.com/search/dwight-gifs">Dwight GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
                                     <div class="moment-info">
                                         <h3>Simulacro de Incendio</h3>
+                                        <p>Dwight y Jim intentan salvar a la oficina</p>
                                      
                                     </div>
                                 </div>
@@ -152,19 +159,41 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div style="width:100%;height:0;padding-bottom:83%;position:relative;">
-                                        <iframe src="https://giphy.com/embed/GA1s4aZhfe5f2N3fFb" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                                        <iframe 
+                                            src="https://giphy.com/embed/GA1s4aZhfe5f2N3fFb" 
+                                            title="Dwight atrapado en una caja - The Office"
+                                            alt="GIF de Dwight atrapado en una caja"
+                                            aria-label="GIF animado de Dwight atrapado en una caja como broma de Jim"
+                                            width="100%" 
+                                            height="100%" 
+                                            style="position:absolute" 
+                                            frameBorder="0" 
+                                            class="giphy-embed" 
+                                            allowFullScreen>
+                                        </iframe>
                                     </div>
                                     <div class="moment-info">
                                         <h3>Dwight en una caja</h3>
-                                    </div>
+                                    </div>/
                                 </div>
                             </div>
 
-                            <!-- Jim's Best Pranks -->
+                            <!-- Las mejores bromas de Jim -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div style="width:100%;height:0;padding-bottom:84%;position:relative;">
-                                        <iframe src="https://giphy.com/embed/MPM1reHx9plTClKlW7" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                                        <iframe 
+                                            src="https://giphy.com/embed/MPM1reHx9plTClKlW7" 
+                                            title="Mejores bromas de Jim - The Office"
+                                            alt="GIF de las bromas de Jim"
+                                            aria-label="GIF animado mostrando las mejores bromas de Jim a Dwight"
+                                            width="100%" 
+                                            height="100%" 
+                                            style="position:absolute" 
+                                            frameBorder="0" 
+                                            class="giphy-embed" 
+                                            allowFullScreen>
+                                        </iframe>
                                     </div>
                                     <div class="moment-info">
                                         <h3>Las Mejores Bromas de Jim</h3>
@@ -172,7 +201,7 @@
                                 </div>
                             </div>
 
-                            <!-- Fire Drill Scene -->
+                            <!-- Jim imitando a Dwight -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div style="width:100%;height:0;padding-bottom:83%;position:relative;">
@@ -240,7 +269,9 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div class="moment-image">
-                                        <img src="assets/images/galeria/michael.jpg" alt="Michael Scott">
+                                        <img src="assets/images/galeria/michael.jpg" 
+                                             alt="Michael Scott sonriendo a la cámara en su oficina" 
+                                             title="Michael Scott - Gerente Regional">
                                     </div>
                                     <div class="moment-info">
                                         <h3>Michael Scott</h3>
@@ -252,7 +283,9 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div class="moment-image">
-                                        <img src="assets/images/galeria/jim-pam.jpg" alt="Jim y Pam">
+                                        <img src="assets/images/galeria/jim-pam.jpg" 
+                                             alt="Jim y Pam compartiendo un momento romántico en la oficina" 
+                                             title="Jim y Pam - La pareja de The Office">
                                     </div>
                                     <div class="moment-info">
                                         <h3>Jim y Pam</h3>
@@ -264,7 +297,9 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div class="moment-image">
-                                        <img src="assets/images/galeria/dwight.jpg" alt="Dwight">
+                                        <img src="assets/images/galeria/dwight.jpg" 
+                                             alt="Dwight Schrute en su escritorio con una mirada seria" 
+                                             title="Dwight Schrute - Asistente del Gerente Regional">
                                     </div>
                                     <div class="moment-info">
                                         <h3>Dwight Schrute</h3>
@@ -276,7 +311,7 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div class="moment-image">
-                                        <img src="assets/images/galeria/celebrations.jpg" 
+                                        <img src="assets/images/galeria/office-party.jpg" 
                                              alt="Escena de celebración en la oficina con todo el elenco" 
                                              title="Celebraciones en Dunder Mifflin">
                                     </div>
@@ -290,7 +325,9 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div class="moment-image">
-                                        <img src="assets/images/galeria/conference-room.jpg" alt="Sala de Conferencias">
+                                        <img src="assets/images/galeria/conference-room.jpg" 
+                                             alt="La sala de conferencias durante una reunión memorable" 
+                                             title="Sala de Conferencias de Dunder Mifflin">
                                     </div>
                                     <div class="moment-info">
                                         <h3>Reuniones Memorables</h3>
@@ -302,7 +339,9 @@
                             <div class="col-md-6 col-lg-4">
                                 <div class="moment-card">
                                     <div class="moment-image">
-                                        <img src="assets/images/galeria/cast.jpg" alt="Elenco Completo">
+                                        <img src="assets/images/galeria/cast.jpg" 
+                                             alt="El elenco completo de The Office posando juntos" 
+                                             title="Elenco completo de The Office">
                                     </div>
                                     <div class="moment-info">
                                         <h3>El Elenco Completo</h3>
@@ -321,22 +360,15 @@
         <section class="video-section mt-5">
             <h2 class="section-title">Mejores Momentos en Video</h2>
             <div class="row g-4">
+                <!-- Parkour -->
                 <div class="col-lg-6">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <video width="100%" 
-                                   height="auto" 
-                                   controls
-                                   controlsList="nodownload" 
-                                   title="Jim Asiático - Escena memorable"
-                                   poster="assets/images/poster/AsianJimPoster.jpg">
-                                <source src="assets/videos/Asian Jim - The Office.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/n_Kx3DzMAqU?si=SOJh9SL9G-aU0FmH" title="Parkour - The Office" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen aria-label="Video de Michael, Dwight y Andy haciendo parkour"></iframe>
                         </div>
                         <div class="video-info">
-                            <h3>Jim Asiático</h3>
-                            <p>La broma de Jim a Dwight</p>
+                            <h3>Parkour</h3>
+                            <p>¡PARKOUR! - Michael, Dwight y Andy</p>
                         </div>
                     </div>
                 </div>
@@ -345,11 +377,16 @@
                 <div class="col-lg-6">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <video width="100%" height="auto" poster="assets/images/poster/MichaelSpanishPoster.jpg" controls>
-                                <source src="assets/videos/Michael esta aprendiendo español - The Office Subtitulado.mp4" type="video/mp4">
-                                <track kind="captions" src="subtitulos/michael-spanish.vtt" label="Español" srclang="es">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
+                            <iframe 
+                                width="560" 
+                                height="315" 
+                                src="https://www.youtube.com/embed/jIS2LxZ48PE?si=4_I9ZhJ_uJvMY2X9" 
+                                title="Michael Aprende Español" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                         <div class="video-info">
                             <h3>Michael Aprende Español</h3>
@@ -359,18 +396,15 @@
                 </div>
 
                 
-                <!-- Michael's Pyramid Scheme -->
+                <!-- Dwight el Lameculos -->
                 <div class="col-lg-6">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <video width="100%" height="auto"  poster="assets/images/poster/PiramidePoster.jpg" controls>
-                                <source src="assets/videos/Michael's Pyramid Scheme  - The Office US.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/mDCfDGu6VWA?si=-A5OYoYRFgmE_xF1" title="Dwight el Lameculos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                         <div class="video-info">
-                            <h3>Esquema Piramidal</h3>
-                            <p>Michael intenta vender un esquema piramidal</p>
+                            <h3>Dwight el Lameculos</h3>
+                            <p>Dwight siendo el asistente perfecto</p>
                         </div>
                     </div>
                 </div>
@@ -380,10 +414,16 @@
                     <div class="col-lg-6">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <video width="100%" height="auto" poster="assets/images/poster/NoGodPoster.jpg" controls>
-                                <source src="assets/videos/No God, Please No! Noooooooo!  - The Office (Sub Español Latino).mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
+                            <iframe 
+                                width="560" 
+                                height="315" 
+                                src="https://www.youtube.com/embed/31g0YE61PLQ?si=alF_poSe5alPfk3u" 
+                                title="No, Dios, No! - Michael Scott" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                         <div class="video-info">
                             <h3>No, Dios, No!</h3>
@@ -403,8 +443,9 @@
                     <div class="audio-card">
                       
                         <div class="audio-player">
-                            <audio controls title="Eso dijo ella - Michael Scott">
+                            <audio controls title="Eso dijo ella - Michael Scott" aria-label="Reproducir frase célebre de Michael Scott - That's what she said">
                                 <source src="assets/audio/esoDijoElla.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento de audio.
                             </audio>
                             <p>"Eso dijo ella" - Michael Scott</p>
                         </div>
@@ -415,8 +456,9 @@
                     <div class="audio-card">
                        
                         <div class="audio-player">
-                            <audio controls title="Frase célebre de Michael Scott">
+                            <audio controls title="Frase célebre de Michael Scott" aria-label="Reproducir frase célebre de Michael Scott sobre su filosofía">
                                 <source src="assets/audio/mi filosofia.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento de audio.
                             </audio>
                             <p>"Mi filosofía" - Michael Scott</p>
                         </div>
@@ -427,8 +469,9 @@
                     <div class="audio-card">
                         
                         <div class="audio-player">
-                            <audio controls>
+                            <audio controls title="Nadie debería ir a trabajar - Michael Scott" aria-label="Reproducir frase célebre de Michael Scott sobre el trabajo">
                                 <source src="assets/audio/nadie deberia.mp3" type="audio/mpeg">
+                                Tu navegador no soporta el elemento de audio.
                             </audio>
                             <p>"Nadie debería ir a trabajar..." - Michael Scott</p>
                     </div>
@@ -441,14 +484,18 @@
 
         <!-- Modal para imágenes -->
         <div class="modal fade" id="imageModal">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-lg" 
+                 role="dialog" 
+                 aria-labelledby="modalTitle" 
+                 aria-describedby="modalDescription">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title"></h5>
+                        <h5 id="modalTitle" class="modal-title">Imagen Ampliada</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <img src="" class="img-fluid" id="modalImage">
+                        <p id="modalDescription" class="sr-only">Vista ampliada de la imagen seleccionada</p>
                     </div>
                 </div>
             </div>
@@ -465,15 +512,16 @@
                         <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">Fan site The Office </span> by <span property="cc:attributionName">Antonio Ibáñez</span> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Creative Commons Attribution-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p>
                         <div class="footer-logo">
                             <img src="assets/images/the-office-tv-show-sign-seeklogo.png" 
-                                 alt="The Office Logo" 
+                                 alt="Logotipo de The Office" 
+                                 title="Logo de The Office"
                                  class="footer-brand-logo" style="width: 150px; height: auto;">
                         </div>
                 </div>
                     <div class="col-lg-6 footer-section">
                     <h5>Recursos Utilizados</h5>
                     <ul class="list-unstyled">
-                        <li>Imágenes: <a href="https://www.gettyimages.es/fotos/the-office-programa-de-televisi%C3%B3n" class="text-light">gettyimages</a> (Licencia libre)</li>
-                        <li>Iconos: <a href="https://fontawesome.com" class="text-light">Font Awesome</a> (Licencia libre)</li>
+                        <li>Imágenes: <a href="https://www.gettyimages.es" class="text-light" title="Ver imágenes en Getty Images">gettyimages</a> (Licencia libre)</li>
+                        <li>Iconos: <a href="https://fontawesome.com" class="text-light" title="Visitar Font Awesome">Font Awesome</a> (Licencia libre)</li>
                         <li>Audio: <a href="https://freesound.org" class="text-light">Freesound</a> (CC0)</li>
                         <li>Video: <a href="https://www.pexels.com" class="text-light">Pexels</a> (Licencia libre)</li>
                     </ul>

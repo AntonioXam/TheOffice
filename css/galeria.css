@@ -143,20 +143,21 @@
 
 /* Sección de Videos */
 .video-card {
-    background: rgba(68, 79, 82, 0.95);
+    background: rgba(0, 44, 58, 0.95);
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
     margin-bottom: 20px;
     height: 100%;
-    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 56.25% !important;
     height: 0;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
+    background: #000;
 }
 
 .video-wrapper iframe {
@@ -165,10 +166,12 @@
     left: 0;
     width: 100%;
     height: 100%;
+    border: 0;
 }
 
 .video-info {
-    padding: 15px;
+    padding: 1.5rem;
+    color: #000000;
 }
 
 .video-info h3 {
@@ -213,7 +216,7 @@
 
 /* Sección de Audio */
 .audio-card {
-    background: rgba(59, 73, 77, 0.95);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 15px;
     overflow: hidden;
     padding: 1rem;
@@ -333,7 +336,7 @@ main.container {
 }
 
 .nav-tabs {
-    border-bottom: 2px solid rgba(142, 211, 231, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     margin-bottom: 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -341,7 +344,7 @@ main.container {
 }
 
 .nav-tabs .nav-link {
-    color: #8ed3e7;
+    color: #000000;
     border: none;
     padding: 1rem 1.5rem;
     border-radius: 10px;
@@ -357,7 +360,7 @@ main.container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(142, 211, 231, 0.1), transparent);
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.2), transparent);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
 }
@@ -367,8 +370,8 @@ main.container {
 }
 
 .nav-tabs .nav-link.active {
-    background: #8ed3e7;
-    color: #002c3a;
+    background: #000000;
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -461,7 +464,7 @@ main.container {
 
 .video-info {
     padding: 1.5rem;
-    color: #8ed3e7;
+    color: #000000;
 }
 
 /* Mejorar la sección de audio */
@@ -476,7 +479,7 @@ main.container {
 }
 
 .audio-card {
-    background: rgba(142, 211, 231, 0.1);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 15px;
     padding: 1.5rem;
     transition: all 0.3s ease;
@@ -485,7 +488,7 @@ main.container {
 .audio-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background: rgba(142, 211, 231, 0.15);
+    background: rgba(0, 0, 0, 0.25);
 }
 
 /* Animaciones */
@@ -523,7 +526,7 @@ main.container {
     left: 0;
     width: 50%;
     height: 3px;
-    background: linear-gradient(to right, #8ed3e7, transparent);
+    background: linear-gradient(to right, #000000, transparent);
 }
 
 /* Estilos para el botón de audio del hero */
@@ -542,8 +545,8 @@ main.container {
     padding: 10px 20px;
     border-radius: 25px;
     background: rgba(0, 44, 58, 0.95);
-    border: 2px solid #8ed3e7;
-    color: #8ed3e7;
+    border: 2px solid #000000;
+    color: #000000;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -562,8 +565,8 @@ main.container {
 }
 
 .hero-overlay .theme-button.playing {
-    background: #8ed3e7;
-    color: rgba(0, 44, 58, 0.95);
+    background: #000000;
+    color: #ffffff;
     animation: pulse 2s infinite;
 }
 
