@@ -10,61 +10,6 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/galeria.css">
     <link rel="icon" type="image/x-icon" href="assets/images/logoX-icon.png">
-    <style>
-        /* Estilos para el reproductor personalizado */
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .video-wrapper:hover .video-overlay {
-            opacity: 1;
-        }
-
-        .play-btn {
-            background: rgba(142, 211, 231, 0.9);
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .play-btn:hover {
-            transform: scale(1.1);
-            background: #8ed3e7;
-        }
-
-        .video-progress {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: #8ed3e7;
-            width: 0;
-            transition: width 0.1s linear;
-        }
-    </style>
 </head>
 <body>
     <!-- Hero Section con Video -->
@@ -376,13 +321,13 @@
         <section class="video-section mt-5">
             <h2 class="section-title">Mejores Momentos en Video</h2>
             <div class="row g-4">
-                <!--Asian Jim-->
-        
                 <div class="col-lg-6">
                     <div class="video-card">
                         <div class="video-wrapper">
-                            <video width="100%" height="auto" 
+                            <video width="100%" 
+                                   height="auto" 
                                    controls
+                                   controlsList="nodownload" 
                                    title="Jim Asiático - Escena memorable"
                                    poster="assets/images/poster/AsianJimPoster.jpg">
                                 <source src="assets/videos/Asian Jim - The Office.mp4" type="video/mp4">
@@ -395,8 +340,6 @@
                         </div>
                     </div>
                 </div>
-
-       
 
                 <!-- Michael's Spanish Lessons -->
                 <div class="col-lg-6">
