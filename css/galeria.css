@@ -50,6 +50,7 @@
     position: relative;
     display: inline-block;
     padding-bottom: 0.5rem;
+    font-size: 2rem;
 }
 
 .section-title::after {
@@ -583,4 +584,20 @@ main.container {
     .hero-overlay .theme-button .button-text {
         font-size: 0.8rem;
     }
+}
+
+/* Estilos para los títulos de las cards */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+/* Estilos para los títulos del footer */
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
 }

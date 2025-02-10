@@ -273,7 +273,7 @@ body::before {
     color: #8ed3e7;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
@@ -1547,4 +1547,31 @@ footer {
         opacity: 1;
         transform: none;
     }
+}
+
+/* Estilos para los títulos de las cards */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Estilos para los títulos del footer */
+.footer-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* Ajustar el tamaño de los títulos de sección */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
