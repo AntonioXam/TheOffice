@@ -37,4 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+});
+
+// Detectar cuando los videos se han cargado
+document.querySelectorAll('.video-wrapper iframe').forEach(iframe => {
+    iframe.addEventListener('load', function() {
+        this.parentElement.classList.add('loaded');
+    });
 }); 
