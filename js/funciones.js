@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Control del audio tema - Versión mejorada
+// Control del audio tema - Versión mejorada y corregida
 document.addEventListener('DOMContentLoaded', function() {
     const themeButton = document.getElementById('themeButton');
     const themeAudio = document.getElementById('themeAudio');
@@ -571,33 +571,26 @@ document.addEventListener('DOMContentLoaded', function() {
         themeAudio.load();
 
         // Manejar el clic en el botón
-        themeButton.addEventListener('click', function() {
-            // Promesa para reproducir el audio
-            const playPromise = themeAudio.play();
-
-            if (playPromise !== undefined) {
-                playPromise.then(_ => {
-                    // Reproducción exitosa
-                    if (themeAudio.paused) {
-                        themeAudio.play();
-                        icon.classList.remove('fa-play');
-                        icon.classList.add('fa-pause');
-                        buttonText.textContent = 'Pausar tema musical';
-                        themeButton.classList.add('playing');
-                    } else {
-                        themeAudio.pause();
-                        icon.classList.remove('fa-pause');
-                        icon.classList.add('fa-play');
-                        buttonText.textContent = 'Iniciar tema musical';
-                        themeButton.classList.remove('playing');
-                    }
-                })
-                .catch(error => {
-                    // Error en la reproducción
-                    console.error('Error al reproducir el audio:', error);
-                    // Mostrar mensaje al usuario
-                    alert('No se pudo reproducir el audio. Por favor, inténtalo de nuevo.');
-                });
+        themeButton.addEventListener('click', async function() {
+            try {
+                if (themeAudio.paused) {
+                    // Intentar reproducir
+                    await themeAudio.play();
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                    buttonText.textContent = 'Pausar tema musical';
+                    themeButton.classList.add('playing');
+                } else {
+                    themeAudio.pause();
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    buttonText.textContent = 'Iniciar tema musical';
+                    themeButton.classList.remove('playing');
+                }
+            } catch (error) {
+                console.error('Error al reproducir el audio:', error);
+                // Mostrar mensaje al usuario
+                alert('No se pudo reproducir el audio. Asegúrate de que el archivo existe en la ruta correcta.');
             }
         });
 
@@ -612,10 +605,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Manejar errores de carga del audio
         themeAudio.addEventListener('error', function(e) {
             console.error('Error al cargar el audio:', e);
+            console.log('Código de error:', themeAudio.error.code);
+            console.log('Mensaje de error:', themeAudio.error.message);
             themeButton.disabled = true;
             buttonText.textContent = 'Audio no disponible';
             icon.classList.remove('fa-play', 'fa-pause');
             icon.classList.add('fa-exclamation-triangle');
+        });
+
+        // Verificar si el audio está listo
+        themeAudio.addEventListener('canplaythrough', function() {
+            console.log('Audio listo para reproducir');
+            themeButton.disabled = false;
         });
     }
 });
