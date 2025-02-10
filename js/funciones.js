@@ -558,32 +558,66 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Control del audio tema
+// Control del audio tema - Versión mejorada
 document.addEventListener('DOMContentLoaded', function() {
     const themeButton = document.getElementById('themeButton');
     const themeAudio = document.getElementById('themeAudio');
-    const icon = themeButton.querySelector('i');
+    
+    if (themeButton && themeAudio) {
+        const icon = themeButton.querySelector('i');
+        const buttonText = themeButton.querySelector('.button-text');
 
-    themeButton.addEventListener('click', function() {
-        if (themeAudio.paused) {
-            themeAudio.play();
-            icon.classList.remove('fa-play');
-            icon.classList.add('fa-pause');
-            themeButton.classList.add('playing');
-        } else {
-            themeAudio.pause();
+        // Precargar el audio
+        themeAudio.load();
+
+        // Manejar el clic en el botón
+        themeButton.addEventListener('click', function() {
+            // Promesa para reproducir el audio
+            const playPromise = themeAudio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Reproducción exitosa
+                    if (themeAudio.paused) {
+                        themeAudio.play();
+                        icon.classList.remove('fa-play');
+                        icon.classList.add('fa-pause');
+                        buttonText.textContent = 'Pausar tema musical';
+                        themeButton.classList.add('playing');
+                    } else {
+                        themeAudio.pause();
+                        icon.classList.remove('fa-pause');
+                        icon.classList.add('fa-play');
+                        buttonText.textContent = 'Iniciar tema musical';
+                        themeButton.classList.remove('playing');
+                    }
+                })
+                .catch(error => {
+                    // Error en la reproducción
+                    console.error('Error al reproducir el audio:', error);
+                    // Mostrar mensaje al usuario
+                    alert('No se pudo reproducir el audio. Por favor, inténtalo de nuevo.');
+                });
+            }
+        });
+
+        // Manejar cuando el audio termina
+        themeAudio.addEventListener('ended', function() {
             icon.classList.remove('fa-pause');
             icon.classList.add('fa-play');
+            buttonText.textContent = 'Iniciar tema musical';
             themeButton.classList.remove('playing');
-        }
-    });
+        });
 
-    // Cuando el audio termine
-    themeAudio.addEventListener('ended', function() {
-        icon.classList.remove('fa-pause');
-        icon.classList.add('fa-play');
-        themeButton.classList.remove('playing');
-    });
+        // Manejar errores de carga del audio
+        themeAudio.addEventListener('error', function(e) {
+            console.error('Error al cargar el audio:', e);
+            themeButton.disabled = true;
+            buttonText.textContent = 'Audio no disponible';
+            icon.classList.remove('fa-play', 'fa-pause');
+            icon.classList.add('fa-exclamation-triangle');
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
