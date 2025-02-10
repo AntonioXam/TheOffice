@@ -558,58 +558,62 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Control del audio del hero
+// Control del audio tema
 document.addEventListener('DOMContentLoaded', function() {
-    const heroAudioButton = document.getElementById('heroAudioButton');
-    const heroAudio = document.getElementById('heroAudio');
+    const themeButton = document.getElementById('themeButton');
+    const themeAudio = document.getElementById('themeAudio');
     
-    if (heroAudioButton && heroAudio) {
-        const audioIcon = heroAudioButton.querySelector('i');
-        const audioText = heroAudioButton.querySelector('.button-text');
-
-        // Precargar el audio
-        heroAudio.load();
-        heroAudio.muted = true;
-
-        heroAudioButton.addEventListener('click', () => {
-            if (heroAudio.muted) {
-                heroAudio.muted = false;
-                heroAudio.play();
-                audioIcon.classList.remove('fa-volume-mute');
-                audioIcon.classList.add('fa-volume-up');
-                audioText.textContent = 'Silenciar audio';
-                heroAudioButton.classList.add('playing');
+    if (themeButton && themeAudio) {
+        const icon = themeButton.querySelector('i');
+        const buttonText = themeButton.querySelector('.button-text');
+        
+        // Asegurarnos de que el audio esté pausado inicialmente
+        themeAudio.pause();
+        
+        themeButton.addEventListener('click', function() {
+            if (themeAudio.paused) {
+                // Intentar reproducir
+                themeAudio.play()
+                    .then(() => {
+                        icon.classList.remove('fa-play');
+                        icon.classList.add('fa-pause');
+                        buttonText.textContent = 'Pausar tema musical';
+                        themeButton.classList.add('playing');
+                    })
+                    .catch(error => {
+                        console.error('Error al reproducir:', error);
+                        alert('Error al reproducir el audio. Por favor, inténtalo de nuevo.');
+                    });
             } else {
-                heroAudio.muted = true;
-                audioIcon.classList.remove('fa-volume-up');
-                audioIcon.classList.add('fa-volume-mute');
-                audioText.textContent = 'Activar audio del intro';
-                heroAudioButton.classList.remove('playing');
+                themeAudio.pause();
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                buttonText.textContent = 'Reproducir tema musical';
+                themeButton.classList.remove('playing');
             }
         });
 
-        // Manejar cuando el audio termina
-        heroAudio.addEventListener('ended', function() {
-            audioIcon.classList.remove('fa-volume-up');
-            audioIcon.classList.add('fa-volume-mute');
-            audioText.textContent = 'Activar audio del intro';
-            heroAudioButton.classList.remove('playing');
-            heroAudio.muted = true;
-        });
-
-        // Manejar errores de carga del audio
-        heroAudio.addEventListener('error', function(e) {
-            console.error('Error al cargar el audio:', e);
-            heroAudioButton.disabled = true;
-            audioText.textContent = 'Audio no disponible';
-            audioIcon.classList.remove('fa-volume-mute', 'fa-volume-up');
-            audioIcon.classList.add('fa-exclamation-triangle');
+        // Cuando el audio termina
+        themeAudio.addEventListener('ended', function() {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+            buttonText.textContent = 'Reproducir tema musical';
+            themeButton.classList.remove('playing');
         });
 
         // Verificar si el audio está listo
-        heroAudio.addEventListener('canplaythrough', function() {
+        themeAudio.addEventListener('canplaythrough', () => {
             console.log('Audio listo para reproducir');
-            heroAudioButton.disabled = false;
+            themeButton.disabled = false;
+        });
+
+        // Manejar errores
+        themeAudio.addEventListener('error', (e) => {
+            console.error('Error en el audio:', e);
+            themeButton.disabled = true;
+            buttonText.textContent = 'Audio no disponible';
+            icon.classList.remove('fa-play', 'fa-pause');
+            icon.classList.add('fa-exclamation-triangle');
         });
     }
 });
