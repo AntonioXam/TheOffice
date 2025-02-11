@@ -567,53 +567,65 @@ document.addEventListener('DOMContentLoaded', function() {
         const icon = themeButton.querySelector('i');
         const buttonText = themeButton.querySelector('.button-text');
         
-        // Asegurarnos de que el audio esté pausado inicialmente
-        themeAudio.pause();
+        // Deshabilitar el botón inicialmente hasta que el audio esté listo
+        themeButton.disabled = true;
         
-        themeButton.addEventListener('click', function() {
-            if (themeAudio.paused) {
-                // Intentar reproducir
-                themeAudio.play()
-                    .then(() => {
-                        icon.classList.remove('fa-play');
-                        icon.classList.add('fa-pause');
-                        buttonText.textContent = 'Pausar tema musical';
-                        themeButton.classList.add('playing');
-                    })
-                    .catch(error => {
-                        console.error('Error al reproducir:', error);
-                        alert('Error al reproducir el audio. Por favor, inténtalo de nuevo.');
-                    });
-            } else {
-                themeAudio.pause();
-                icon.classList.remove('fa-pause');
-                icon.classList.add('fa-play');
-                buttonText.textContent = 'Reproducir tema musical';
-                themeButton.classList.remove('playing');
+        // Función para actualizar la UI del botón
+        function updateButtonUI(isPlaying) {
+            icon.classList.remove(isPlaying ? 'fa-play' : 'fa-pause');
+            icon.classList.add(isPlaying ? 'fa-pause' : 'fa-play');
+            buttonText.textContent = isPlaying ? 'Pausar tema musical' : 'Reproducir tema musical';
+            themeButton.classList.toggle('playing', isPlaying);
+        }
+
+        // Función para manejar errores
+        function handleAudioError(error) {
+            console.error('Error de audio:', error);
+            themeButton.disabled = true;
+            buttonText.textContent = 'Audio no disponible';
+            icon.className = 'fas fa-exclamation-triangle';
+            themeButton.classList.add('error');
+        }
+        
+        themeButton.addEventListener('click', async function() {
+            try {
+                if (themeAudio.paused) {
+                    await themeAudio.play();
+                    updateButtonUI(true);
+                } else {
+                    themeAudio.pause();
+                    updateButtonUI(false);
+                }
+            } catch (error) {
+                handleAudioError(error);
             }
         });
 
         // Cuando el audio termina
-        themeAudio.addEventListener('ended', function() {
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-play');
-            buttonText.textContent = 'Reproducir tema musical';
-            themeButton.classList.remove('playing');
+        themeAudio.addEventListener('ended', () => {
+            updateButtonUI(false);
         });
 
         // Verificar si el audio está listo
         themeAudio.addEventListener('canplaythrough', () => {
             console.log('Audio listo para reproducir');
             themeButton.disabled = false;
+            updateButtonUI(false);
         });
 
-        // Manejar errores
+        // Manejar errores de carga
         themeAudio.addEventListener('error', (e) => {
-            console.error('Error en el audio:', e);
-            themeButton.disabled = true;
-            buttonText.textContent = 'Audio no disponible';
-            icon.classList.remove('fa-play', 'fa-pause');
-            icon.classList.add('fa-exclamation-triangle');
+            handleAudioError(e);
+        });
+
+        // Manejar cuando el audio se pausa por otras razones
+        themeAudio.addEventListener('pause', () => {
+            updateButtonUI(false);
+        });
+
+        // Manejar cuando el audio se reproduce
+        themeAudio.addEventListener('play', () => {
+            updateButtonUI(true);
         });
     }
 });
